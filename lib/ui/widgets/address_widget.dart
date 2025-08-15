@@ -67,11 +67,12 @@ class AddressWidget extends StatelessWidget {
           title: 'Logradouro ',
           subtitle: cepModel.logradouro,
         ),
-        _InfoCard(
-          icon: Icons.loupe_outlined,
-          title: 'Complemento',
-          subtitle: cepModel.complemento,
-        ),
+        if (cepModel.complemento.isNotEmpty)
+          _InfoCard(
+            icon: Icons.loupe_outlined,
+            title: 'Complemento',
+            subtitle: cepModel.complemento,
+          ),
         _InfoCard(
           icon: Icons.location_on_rounded,
           title: 'Bairro',
